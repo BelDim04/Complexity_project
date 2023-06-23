@@ -3,37 +3,6 @@
 #include <unordered_set>
 #define INF 100000007
 
-std::vector<std::vector<int>> read_graph() {
-  int n;
-  std::cin >> n;
-  std::vector<std::vector<int>> res(n, std::vector<int>(n));
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
-      std::cin >> res[i][j];
-      if (res[i][j] < 0) {
-        res[i][j] = INF;
-      }
-    }
-  }
-  return res;
-}
-
-std::vector<std::vector<std::pair<int, int>>> read_components() {
-  int c;
-  std::cin >> c;
-  std::vector<std::vector<std::pair<int, int>>> res(c);
-  for (int i = 0; i < c; ++i) {
-    int sz;
-    std::cin >> sz;
-    res[i].resize(sz);
-    for (int j = 0; j < sz; ++j) {
-      std::cin >> res[i][j].first >> res[i][j].second;
-    }
-  }
-  return res;
-}
-
-
 std::vector<std::vector<int>> make_graph(int n, int p) {
   int max_dist = 10000;
   std::vector<std::vector<int>> res(n, std::vector<int>(n, 0));
